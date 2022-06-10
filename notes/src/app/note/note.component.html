@@ -1,0 +1,29 @@
+<div class="container" *ngIf="note.active">
+    <div class="note">
+        <h5 class="note-desc">{{note.noteDescription}}</h5>
+        <button class="btn-more" (click)="moreInfo=!moreInfo; blockButtonEdit()">More</button>
+        <button class="btn-edit" (click)="editable=!editable; blockButtonMore()">Edit</button>
+        <button class="btn-delete" (click)="deleteNote();" >Delete</button>
+    </div>
+    <div class="edit-note" *ngIf="editable || moreInfo">
+        <div class="info"></div>
+        <input type="text" placeholder="note" 
+        class="input-desc" [value]="note.noteDescription" 
+        #newNote (keyup.enter)="saveNote(newNote.value)"
+        [disabled]="moreInfo">
+        <div class="tags">
+            Tags:
+            <ul class="list-tags" *ngFor="let tag of note.tags">
+                <li>
+                    {{tag}}
+                </li>
+            </ul>
+        </div>
+        <div class="btn-wrapper" *ngIf="editable && !moreInfo">
+            <button class="btn-save" (click)="saveNote(newNote.value);editable=!editable">Save</button>
+            <button class="btn-cancel" (click)="editable=!editable">Cancel</button>
+        </div>
+    </div>
+</div>
+
+

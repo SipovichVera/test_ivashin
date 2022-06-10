@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <header class="header">
+        <a href="#" class="logo">
+            MyNotes
+        </a>
+        <button class="btn-add-note _button" (click)="modal = true">
+            Add note
+        </button>
+        <app-add-note *ngIf="modal" (close)="modal = false"></app-add-note>
+    </header>
+    
+    <div class="container">
+        <div class="notes" *ngFor="let note of allNotes">
+            <app-note [note]="note"></app-note>
+        </div>
+    </div>
+</div>
+
