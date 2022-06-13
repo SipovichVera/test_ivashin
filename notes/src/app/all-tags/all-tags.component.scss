@@ -1,0 +1,30 @@
+.container {
+    margin-top: 50px;
+    width: 40%;
+}
+
+.header {
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.tags {
+    display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(2, 50px);
+}
+
+.tag-name {
+    padding: 8px;
+    border: solid 2px rgb(159, 179, 183);
+    background-color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    margin: 5px 5px;
+}
+
+.tag-name:hover {
+    background-color: rgb(234, 234, 234);
+}

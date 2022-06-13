@@ -1,6 +1,19 @@
 <div class="background"></div>
 <div class="modal-window">
-    <div class="form">
+    <form class="form" #form="ngForm">
+        <div class="add-task" [ngClass]="{'has-error' : note.invalid && note.touched}">
+            <label for="addItem">add new note</label><br>
+            <input ngModel name="newNote" required #newNote
+            placeholder="add new note" class="add-input"
+            (keyup.enter)="addNote.emit(newNote.value); newNote.value=''" 
+            id="addItem" #note="ngModel">
+            <p *ngIf="note.invalid && note.touched">
+                enter note
+            </p>
+        </div>
+        <div class="btn-add">
+            <button (click)="addNote.emit(newNote.value); close.emit()">ADD</button>
+        </div>
         <button class="close" (click)="close.emit()">Cancel</button>
-    </div>
+    </form>
 </div>

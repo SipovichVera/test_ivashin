@@ -14,7 +14,7 @@
     "id" : 3,
     "noteDescription" : "read 20 pages",
     "tags": ["study"],
-    "active" : false
+    "active" : true
 },
 {
     "id" : 4,
