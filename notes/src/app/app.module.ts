@@ -13,6 +13,7 @@ import { AddTagComponent } from './components/add-tag/add-tag.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HashtagDirective } from './directives/hashtag.directive';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { ColorHashtagDirective } from './directives/color-hashtag.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     AllTagsComponent,
     ColorDirective,
     AddTagComponent,
-    HashtagDirective
+    HashtagDirective,
+    ColorHashtagDirective
   ],
   imports: [
     FormsModule,

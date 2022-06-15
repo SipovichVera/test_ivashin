@@ -1,6 +1,6 @@
 <div class="container" *ngIf="note.active">
     <div class="note">
-        <div class="note-desc">- {{note.noteDescription}}</div>
+        <div class="note-desc" [note]="note" appColorHashtag>- {{note.noteDescription}}</div>
         <button class="btn-more" (click)="moreInfo=!moreInfo; blockButtonEdit()">More</button>
         <button class="btn-edit" (click)="editable=!editable; blockButtonMore()">Edit</button>
         <button class="btn-delete" (click)="deleteNote();" >Delete</button>

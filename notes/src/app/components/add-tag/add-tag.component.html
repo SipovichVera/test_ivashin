@@ -11,9 +11,27 @@
                 Enter Tag
             </p>
         </div>
+        <!-- <div *ngIf="newTag.errors['required']">Tag is required</div> -->
         <div class="btn-wrapper">
-            <button class="btn-add" (click)="addTag.emit(newTag.value); close.emit()">Add</button>
-            <button class="btn-close" (click)="close.emit()">Cancel</button>
+            <button type="button" class="btn-add" (click)="addTag.emit(newTag.value); close.emit()">Add</button>
+            <button type="button" class="btn-close" (click)="close.emit()">Cancel</button>
+        </div>
+        <div class="remove-tags">
+            <p>Remove Tag</p>
+            <ng-multiselect-dropdown 
+                [ngModelOptions]="{standalone: true}"
+                [data]="tags"
+                [placeholder]="'remove tag'" 
+                [settings]="{
+                    singleSelection: false,
+                    selectAllText: 'Select All',
+                    unSelectAllText: 'UnSelect All',
+                    allowSearchFilter: false
+                }"
+                [(ngModel)]="selectedTags" 
+            >
+            </ng-multiselect-dropdown>
+            <button type="button" class="btn-remove" (click)="removeTags();close.emit()">Delete</button>
         </div>
     </form>
 </div>

@@ -35,19 +35,27 @@
 button {
     width: 100px;
     padding: 5px;
+    margin-top: 10px;
     border-radius: 4px;
     background-color: rgb(198, 175, 201);
     font-weight: 600;
 }
 
 .btn-add{
-    position: absolute;
-    right: 140px;
-    bottom: 20px;
+    margin-right: 20px;
 }
 
-.btn-close{
+.btn-close {
     position: absolute;
-    right: 30px;
     bottom: 20px;
+    right: 50px;
+}
+
+.remove-tags {
+    margin-top: 70px;
+    width: 70%;
+}
+
+.btn-remove {
+    margin-top: 20px;
 }

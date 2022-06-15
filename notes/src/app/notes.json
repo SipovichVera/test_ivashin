@@ -1,0 +1,31 @@
+[
+{
+    "id" : 1,
+    "noteDescription" : "study angular",
+    "tags": ["study", "angular"],
+    "active" : true
+},
+    {
+        "id" : 2,
+    "noteDescription" : "have a breakfast",
+    "tags": ["cooking"],
+    "active" : true
+},
+{
+    "id" : 3,
+    "noteDescription" : "read 20 pages",
+    "tags": ["study"],
+    "active" : true
+},
+{
+    "id" : 4,
+    "noteDescription" : "go for a walk",
+    "tags": ["sport"],
+    "active" : true
+},
+{
+    "id" : 5,
+    "noteDescription" : "buy some products",
+    "tags": ["shopping"],
+    "active" : true
+}]

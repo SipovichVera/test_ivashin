@@ -33,6 +33,19 @@ export class NotesService{
     return this.note;
   }
 
+  removeTag(tag: string):void {
+    this.allNotes.filter(item => {if (item.tags.includes(tag)) {
+      let index = item.tags.indexOf(tag);
+      if (index !== -1) {
+        item.tags.splice(index, 1);
+      }
+    }}
+    )
+    if (this.allTags.has(tag)) {
+      this.allTags.delete(tag);
+      }
+  }
+
   addNewNote(newNote: {note: string, tags: string[]}):void {
     this.allNotes.push({id:6, noteDescription: newNote.note, tags:newNote.tags, active: true});
   }

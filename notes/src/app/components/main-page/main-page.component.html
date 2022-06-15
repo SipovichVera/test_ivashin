@@ -7,7 +7,7 @@
             Add note
         </button>
         <button class="btn-add-tag" (click)="modalTag = true">
-            Add tag
+            Add/Delete tag
         </button>
         <app-add-note *ngIf="modalNote" (addNote)="addNewNote($event)"
          (close)="modalNote = false" (hashtags)="addHashtags($event)"></app-add-note>

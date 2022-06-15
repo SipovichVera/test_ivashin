@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
+import { NotesService } from 'src/app/services/notes.service';
 
 @Component({
   selector: 'app-add-tag',
@@ -6,11 +7,22 @@ import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
   styleUrls: ['./add-tag.component.scss']
 })
 export class AddTagComponent implements OnInit {
+  form: any = {
+    newTag: null, 
+  }
   @Output() close = new EventEmitter<any>();
   @Output() addTag = new EventEmitter<string>();
-  constructor() { }
+  selectedTags: string[] = [];
+  tags:string[] = [];
+
+  constructor(private noteService: NotesService) { }
 
   ngOnInit(): void {
+    this.tags = Array.from(this.noteService.tags);
+  }
+
+  removeTags():void {
+    this.selectedTags.forEach(item => this.noteService.removeTag(item));
   }
 
 }

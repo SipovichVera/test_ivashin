@@ -1,0 +1,95 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "noteDescription": "go for a #walk",
+      "tags": [
+        "#sport",
+        "#walk"
+      ],
+      "active": true
+    },
+    {
+      "id": 2,
+      "noteDescription": "have a breakfast",
+      "tags": [
+        "#cooking"
+      ],
+      "active": true
+    },
+    {
+      "id": 3,
+      "noteDescription": "read 20 pages",
+      "tags": [
+        "#study"
+      ],
+      "active": true
+    },
+    {
+      "id": 4,
+      "noteDescription": "study angular",
+      "tags": [
+        "#study",
+        "#angular"
+      ],
+      "active": true
+    },
+    {
+      "id": 5,
+      "noteDescription": "buy some products",
+      "tags": [
+        "#shopping"
+      ],
+      "active": true
+    },
+    {
+      "note": "scasca",
+      "tags": [
+        "#sport"
+      ],
+      "id": 6
+    },
+    {
+      "note": "scasca",
+      "tags": [
+        "#sport"
+      ],
+      "id": 7
+    },
+    {
+      "note": "scasca",
+      "tags": [
+        "#sport"
+      ],
+      "id": 8
+    },
+    {
+      "note": "scasca",
+      "tags": [
+        "#sport"
+      ],
+      "id": 9
+    },
+    {
+      "note": "scasca",
+      "tags": [
+        "#sport"
+      ],
+      "id": 10
+    },
+    {
+      "note": "scac",
+      "tags": [
+        "#sport"
+      ],
+      "id": 11
+    },
+    {
+      "note": "vsvs",
+      "tags": [
+        "#sport"
+      ],
+      "id": 12
+    }
+  ]
+}

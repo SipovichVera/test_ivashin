@@ -22,7 +22,6 @@ export class NoteComponent implements OnInit {
   saveNote(noteDescription: string){
     this.note.noteDescription = noteDescription;
     this.note.tags = [...new Set([...this.note.tags, ...this.newTags])];
-    console.log(this.note.tags);
     this.tags.emit(this.newTags);
   }
 
