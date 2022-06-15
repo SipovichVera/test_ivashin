@@ -2,7 +2,7 @@
     {
         "id" : 1,
         "noteDescription" : "study angular",
-        "tags": ["#study", "#angular"],
+        "tags": ["study", "#angular"],
         "active" : true
     },
         {

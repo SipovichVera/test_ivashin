@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HashtagDirective } from './directives/hashtag.directive';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { ColorHashtagDirective } from './directives/color-hashtag.directive';
+import { HashtagHighlightPipe } from './pipes/hashtag-highlight.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ColorHashtagDirective } from './directives/color-hashtag.directive';
     ColorDirective,
     AddTagComponent,
     HashtagDirective,
-    ColorHashtagDirective
+    ColorHashtagDirective,
+    HashtagHighlightPipe
   ],
   imports: [
     FormsModule,
