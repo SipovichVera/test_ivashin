@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Note } from '../note';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Note } from '../../note';
 
 @Component({
   selector: 'app-note',
@@ -9,8 +9,10 @@ import { Note } from '../note';
 export class NoteComponent implements OnInit {
 
   @Input() note: Note = {id: 0, noteDescription: "", tags:[], active: true};
+  @Output() tags = new EventEmitter<any>();
   editable: boolean = false;
   moreInfo: boolean = false;
+  newTags: string[] = [];
 
   constructor() { }
 
@@ -18,7 +20,10 @@ export class NoteComponent implements OnInit {
   }
 
   saveNote(noteDescription: string){
-    this.note.noteDescription = noteDescription; 
+    this.note.noteDescription = noteDescription;
+    this.note.tags = [...new Set([...this.note.tags, ...this.newTags])];
+    console.log(this.note.tags);
+    this.tags.emit(this.newTags);
   }
 
   deleteNote() {
@@ -30,5 +35,9 @@ export class NoteComponent implements OnInit {
   }
   blockButtonEdit() {
     this.editable = false;
+  }
+
+  inizTags(hashtags: string[]):void {
+    this.newTags = [...new Set(hashtags)];
   }
 }

@@ -1,0 +1,36 @@
+<div class="background"></div>
+<div class="modal-window">
+    <form class="form" #form="ngForm">
+        <div class="add-task" [ngClass]="{'has-error' : note.invalid && note.touched}">
+            <label for="addItem">Add new note</label><br>
+            <input hashtag ngModel (hashtags)="addToSelectTags($event)" 
+                name="newNote" required #newNote
+                placeholder="add new note" class="add-input" id="addItem" #note="ngModel">
+            <p *ngIf="note.invalid && note.touched">
+                Enter note
+            </p>
+        </div>
+        <div class="choose-tag">
+            <p>Choose tag</p>
+            <div class="add-tags">
+                <ng-multiselect-dropdown 
+                    [ngModelOptions]="{standalone: true}"
+                    [data]="tags"
+                    [placeholder]="'add tag'" 
+                    [settings]="{
+                        singleSelection: false,
+                        selectAllText: 'Select All',
+                        unSelectAllText: 'UnSelect All',
+                        allowSearchFilter: false
+                    }"
+                    [(ngModel)]="selectedTags" 
+                >
+                </ng-multiselect-dropdown>
+            </div>
+        </div>
+        <div class="btn-wrapper">
+            <button type="button" class="btn-add" (click)="addNewNote(newNote.value)">Add</button>
+            <button type="button" class="btn-close" (click)="close.emit()">Cancel</button>
+        </div>
+    </form>
+</div>

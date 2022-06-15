@@ -1,0 +1,45 @@
+.note {
+    display: flex;
+    align-items: center;
+}
+
+.edit-note{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.input-desc{
+    border: solid 3px #ccc;
+    border-radius: 5px;
+}
+
+.header-tags{
+    margin: 10px 10px;
+    font-weight: 600;
+}
+
+.btn-wrapper{
+    margin: 30px 0px;
+}
+
+button {
+    width: 100px;
+    margin: 0px 10px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgb(198, 175, 201);
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: rgb(181, 157, 185); 
+} 
+
+
+.tags{
+    margin-top: 20px;
+}
+
+.list-tags {
+    list-style-type: none;
+}

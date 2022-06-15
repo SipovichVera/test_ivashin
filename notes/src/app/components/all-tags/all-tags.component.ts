@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { NotesService } from '../services/notes.service';
+import { NotesService } from '../../services/notes.service';
 
 @Component({
   selector: 'app-all-tags',
@@ -22,4 +22,5 @@ export class AllTagsComponent implements OnInit {
   selectTag(tag: string): void{
     this.addRemoveSelectedTag.emit(tag);
   }
+  
 }

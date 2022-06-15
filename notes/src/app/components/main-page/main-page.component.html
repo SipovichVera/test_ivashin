@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <header class="header">
+        <a href="#" class="logo">
+            MyNotes
+        </a>
+        <button class="btn-add-note" (click)="modalNote = true">
+            Add note
+        </button>
+        <button class="btn-add-tag" (click)="modalTag = true">
+            Add tag
+        </button>
+        <app-add-note *ngIf="modalNote" (addNote)="addNewNote($event)"
+         (close)="modalNote = false" (hashtags)="addHashtags($event)"></app-add-note>
+        <app-add-tag *ngIf="modalTag" (addTag)="addNewTag($event)"
+          (close)="modalTag = false"></app-add-tag>
+    </header>
+    <app-all-tags (addRemoveSelectedTag)="addRemoveSelectedTag($event)">
+    </app-all-tags>
+    <div class="container">
+        <div class="header-note">Notes</div>
+        <div class="notes" *ngFor="let note of notes">
+            <app-note [note]="note" (tags)="addHashtags($event)"></app-note>
+        </div>
+    </div>
+</div>
+

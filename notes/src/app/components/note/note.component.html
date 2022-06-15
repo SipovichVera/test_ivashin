@@ -8,13 +8,14 @@
     <div class="edit-note" *ngIf="editable || moreInfo">
         <div class="info"></div>
         <input type="text" placeholder="note" 
+        hashtag [ngModel]="note.noteDescription" (hashtags)="inizTags($event)"
         class="input-desc" [value]="note.noteDescription" 
-        #newNote (keyup.enter)="saveNote(newNote.value)"
+        #newNote 
         [disabled]="moreInfo">
         <div class="tags">
-            Tags:
+            <p class="header-tags">Tags:</p>
             <ul class="list-tags" *ngFor="let tag of note.tags">
-                <li>
+                <li class="list-tags-item">
                     {{tag}}
                 </li>
             </ul>

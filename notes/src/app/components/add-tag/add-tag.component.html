@@ -1,0 +1,19 @@
+<div class="background"></div>
+<div class="modal-window">
+    <form class="form" #form="ngForm">
+        <div class="add-tag" [ngClass]="{'has-error' : tag.invalid && tag.touched}">
+            <label for="addItem">Add new tag</label><br>
+            <input ngModel name="newTag" required #newTag
+            placeholder="add new tag" class="add-input"
+            (keyup.enter)="addTag.emit(newTag.value); newTag.value=''" 
+            id="addItem" #tag="ngModel">
+            <p *ngIf="tag.invalid && tag.touched">
+                Enter Tag
+            </p>
+        </div>
+        <div class="btn-wrapper">
+            <button class="btn-add" (click)="addTag.emit(newTag.value); close.emit()">Add</button>
+            <button class="btn-close" (click)="close.emit()">Cancel</button>
+        </div>
+    </form>
+</div>

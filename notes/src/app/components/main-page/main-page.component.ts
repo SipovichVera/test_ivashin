@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from '../note';
-import { NotesService } from '../services/notes.service';
+import { Note } from '../../note';
+import { NotesService } from '../../services/notes.service';
 
 @Component({
   selector: 'app-main-page',
@@ -10,13 +10,16 @@ import { NotesService } from '../services/notes.service';
 export class MainPageComponent implements OnInit {
 
   allNotes: Note[] = [];
+  allTags: Set<string> = new Set;
   selectedTags: string[] = [];
-  modal:boolean = false;
+  modalNote:boolean = false;
+  modalTag:boolean = false;
 
   constructor(private notesService: NotesService) { }
   
   ngOnInit(): void {
     this.allNotes = this.notesService.allNotes;
+    this.allTags = this.notesService.tags;
   }
 
   get notes(): Note[] {
@@ -47,7 +50,18 @@ export class MainPageComponent implements OnInit {
     }
   }
 
-  addNewNote(newNote: string):void {
-    this.allNotes.push({id:6, noteDescription: newNote, tags:[], active: true});
+  addNewNote(newNote: {note: string, tags: string[]}):void {
+    console.log(newNote);
+    this.notesService.addNewNote(newNote);
+    this.addHashtags(newNote.tags);
   }
+
+  addNewTag(newTag: string):void {
+    this.notesService.addNewTag(newTag);
+  }
+
+  addHashtags(hashtags: string[] | any):void {
+    this.notesService.addNewHashtags(hashtags);
+  }
+
 }
