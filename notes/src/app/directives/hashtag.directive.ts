@@ -17,7 +17,6 @@ export class HashtagDirective implements OnChanges{
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log(changes);
     if(changes['input']){
       console.log(changes);
     }
@@ -25,7 +24,6 @@ export class HashtagDirective implements OnChanges{
 
   @HostListener('blur', ['$event']) getHashtags() {
     this.hashtags.emit(this.hashtagArray);
-    console.log(this.hashtagArray);
   }
 
   @HostListener('ngModelChange', ['$event']) onChange(value: any) {

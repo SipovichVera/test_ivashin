@@ -11,11 +11,7 @@ export class HashtagHighlightPipe implements PipeTransform {
         return item.replace(item, '<span class="hashtag-in-note">' + item + '</span>');
       }
       return item;
-    })
-    console.log({
-      value: value, note: newNote
-    });
-    
+    })    
     return newNote.join(' ');
   }
 

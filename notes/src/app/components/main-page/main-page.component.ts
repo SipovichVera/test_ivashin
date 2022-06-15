@@ -51,7 +51,6 @@ export class MainPageComponent implements OnInit {
   }
 
   addNewNote(newNote: {note: string, tags: string[]}):void {
-    console.log(newNote);
     this.notesService.addNewNote(newNote);
     this.addHashtags(newNote.tags);
   }

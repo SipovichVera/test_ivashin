@@ -16,7 +16,6 @@ export class ColorHashtagDirective implements AfterViewInit{
   
   changeColor() {
     let text = this.element.nativeElement.innerText;
-    console.log(this.note.noteDescription.split(' '));
     this.note.noteDescription.split(' ').forEach(item => {
       if (this.note.tags.includes(item)) {
         text = text.replace(item, '<span style="background:rgb(255, 211, 173)">' + item + '</span>');

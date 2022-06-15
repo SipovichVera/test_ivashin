@@ -21,7 +21,6 @@ export class AddNoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.tags = Array.from(this.noteService.tags);
-    console.log(this.tags);
     this.dropdownSettings = {
       textField: '',
     };

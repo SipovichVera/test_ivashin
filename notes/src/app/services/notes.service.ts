@@ -16,14 +16,14 @@ export class NotesService{
 
   constructor(private http: HttpClient) {
     this.allTags = new Set(allNotes.map(item => item.tags).flat());
-    this.http.get<any>(this.jsonURL).subscribe((data)=> {
-      this.note = data;
-    })
+    // this.http.get<any>(this.jsonURL).subscribe((data)=> {
+    //   this.note = data;
+    // })
   }
 
-  public getJSON(): Observable<any> {
-    return this.http.get(this.jsonURL);
-  }
+  // public getJSON(): Observable<any> {
+  //   return this.http.get(this.jsonURL);
+  // }
 
   get tags(): Set<string> {
     return this.allTags;
